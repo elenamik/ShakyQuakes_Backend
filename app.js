@@ -63,7 +63,7 @@ app.use(express.static('public'))
 // });
 
 // launch backend into a port
-const API_PORT=process.env.API_PORT
+const API_PORT=process.env.PORT || 5000
 const server=app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
 const database = mongoose.connection;
 
