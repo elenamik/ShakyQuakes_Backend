@@ -13,5 +13,5 @@ This project was bootstrapped with [Express Generator](https://expressjs.com/en/
 
 ## Deployment notes:
 1. pip freeze > requirements.txt
-2. git add and commit
+2. git add . and commit
 3. git push heroku master
