@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-let {PythonShell} = require('python-shell')
 const mongoose=require('mongoose');
 mongoose.Promise = global.Promise;
 const LatLongData = mongoose.model('LatLongData');
@@ -101,44 +100,12 @@ router.get('/getLocations',function(req,res){
   })
 })
 
-router.get('/checkForHuman', function(req,res,next){
-  const imgName='human2.jpg'
-  //const imgName=req.body.imageName
-
-  let options = {
-    mode: 'text',
-    pythonPath: 'venv/bin/python3',
-    scriptPath: 'bin',
-    pythonOptions: ['-u'],
-    args: [imgName]
-  }
-    console.log(`Running analysis on ${imgName}`)
-
-     PythonShell.run('human_detection_model.py', options, function (err, results) {
-      if (err) {
-        console.log(err)
-        res.send({
-          success:false,
-          error:err
-        })
-      }
-      // Results is an array consisting of messages collected during execution
-      console.log('results: %j', results)
-      res.send({success:true,
-        results})
-    })
-
-   
-})
-
-
 function padZero(value){
   if (value<=9){
       value=`0${value}`
   }
   return value;
 }
- 
 
 module.exports = router;
 

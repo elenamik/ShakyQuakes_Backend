@@ -17,6 +17,7 @@
     "express-session": "^1.16.2",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
+    "lodash.isequal": "^4.5.0",
     "mongo-connect": "0.0.6",
     "mongoose": "^5.6.6",
     "morgan": "~1.9.0",

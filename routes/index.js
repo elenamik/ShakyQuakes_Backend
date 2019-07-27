@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const mongoose=require('mongoose');
 mongoose.Promise = global.Promise;
+const LatLongData = mongoose.model('LatLongData');
 
 
 /* GET home page. */
