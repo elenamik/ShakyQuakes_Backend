@@ -5,7 +5,7 @@ const mongoose=require('mongoose');
 mongoose.Promise = global.Promise;
 const LatLongData = mongoose.model('LatLongData');
 var isEqual = require('lodash.isequal');
-const pythonPath="python-env/bin/python"
+import pythonPath from '../config/pythonPath'
 
 /* GET home page. */
 router.get('/test', function(req, res) {
